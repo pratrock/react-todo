@@ -13,3 +13,7 @@
   justify-content: center;
   padding: 2rem;
 }
+
+.completed {
+  text-decoration: line-through;
+}

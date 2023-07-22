@@ -1,18 +1,37 @@
 import React from "react";
 import Button from "./button";
 import "../App.css";
-function todo({ todo, completeTodo, deleteTodo, editable, onEdit }) {
+
+function Todo({
+  todo,
+  completeTodo,
+  deleteTodo,
+  editable,
+  currentEdit,
+  id,
+  onEdit,
+}) {
   return (
     <div className="todoset">
-      <p contentEditable={editable}>{todo.text}</p>
+      <p
+        contentEditable={currentEdit === id && editable ? true : false}
+        suppressContentEditableWarning
+        onBlur={(e) => onEdit(e, todo.id)} // Save the edit when the input loses focus
+        className={todo.isComplete?"completed":""}
+      >
+        {todo.text}
+      </p>
       <Button
         name={todo.isComplete ? "Incomplete" : "Complete"}
-        onClick={completeTodo}
+        onClick={(e) => completeTodo(e, todo.id)}
       />
-      <Button name="Edit" onClick={onEdit} />
-      <Button name="Delete" onClick={deleteTodo} />
+      <Button
+        name={currentEdit === id && editable ? "Update" : "Edit"}
+        onClick={(e) => onEdit(e, todo.id)}
+      />
+      <Button name="Delete" onClick={(e) => deleteTodo(e, todo.id)} />
     </div>
   );
 }
 
-export default todo;
+export default Todo;
