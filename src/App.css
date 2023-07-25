@@ -8,12 +8,69 @@
   flex-direction: row;
 }
 
+.todolists {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  gap: 10px;
+  width: 80%;
+  margin: auto;
+  padding-top: 2rem;
+}
+
 .todos {
   display: flex;
+  background-color: #e6e2d3;
+  border: 2px solid #e6e2d3;
+  padding: 1rem;
+  border-radius: 10px;
   justify-content: center;
-  padding: 2rem;
+}
+
+.edit {
+  background-color: #008cba;
+  border-radius: 5px;
+  margin: 2px;
 }
 
 .completed {
   text-decoration: line-through;
+}
+
+.delete {
+  background-color: #c94c4c;
+  border-radius: 5px;
+  margin: 2px;
+}
+.isComplete {
+  background-color: #4caf50;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.edit > svg {
+  height: 1rem;
+  pointer-events: none;
+}
+.delete > svg {
+  height: 1rem;
+  pointer-events: none;
+}
+
+input {
+  border: 1px solid #e6e2d3;
+  border-radius: 3px;
+  text-decoration: none;
+  padding: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.submit {
+  background-color: #008cba;
+  color: #e6e2d3;
+  border-color: #008cba;
+  border-radius: 5px;
 }

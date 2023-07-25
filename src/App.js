@@ -57,7 +57,7 @@ function App() {
     <div>
       <div className="addTodos">
         <Input name="todo" value={todo.text} handleChange={handleChange} />
-        <Button onClick={addTodo} name="Add" />
+        <Button onClick={addTodo} name="Add" classes={"submit"} />
       </div>
 
       <Todos

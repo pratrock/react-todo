@@ -12,7 +12,7 @@ function todos({
   currentEdit,
 }) {
   return (
-    <div>
+    <div className="todolists">
       {todos.map((text, i) => {
         return (
           <div key={uuid()} className="todos">
